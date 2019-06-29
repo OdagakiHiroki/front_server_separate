@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// テスト用ルーティング
+Route::group(['middleware' => 'api'], function(){
+    Route::resource('testapis', 'TestApisController');
+});
